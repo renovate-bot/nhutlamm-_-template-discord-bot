@@ -37,13 +37,8 @@ module.exports = {
                         ephemeral: true,
                     });
             }
-            const checkConmunity = interaction.guild.features.includes('COMMUNITY');
-            if (!checkConmunity) {
-                return await ctx.sendMessage({
-                    content: `> I'm sorry for the confusion, but my bot only supports confession for community servers. If you'd like to use confession, you can enable community server features.`,
-                    ephemeral: true,
-                });
-            }
+
+            
             if (!client.cooldown.has(commandName)) {
                 client.cooldown.set(commandName, new Collection());
             }
